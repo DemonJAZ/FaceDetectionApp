@@ -30,7 +30,7 @@ def image_sample():
     crowd = cv2.imread('crowd.jpg')
 
     gray_crowd = cv2.cvtColor(crowd, cv2.COLOR_BGR2GRAY)
-    get_crowd_coordinates = trained_face_data.detectMultiScale(gray_crowd)
+    get_crowd_coordinates = trained_face_data.detectMultiScale(gray_crowd,4)
 
     for (x, y, w, h) in get_crowd_coordinates:
         cv2.rectangle(crowd, (x, y), (x + w, y + h),
